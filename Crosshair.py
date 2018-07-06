@@ -25,6 +25,8 @@ screen.blit(crosshair, middle_of_screen)
 
 while True:
 
+	pygame.mouse.set_visible(False)
+
 	screen.fill(white)
 
 	mouse_pos = pygame.mouse.get_pos()
