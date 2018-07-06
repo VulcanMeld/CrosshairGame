@@ -3,6 +3,7 @@ from pygame.locals import *
 
 pygame.init()
 
+
 FPS = 30
 
 clock = pygame.time.Clock()
@@ -23,6 +24,8 @@ crosshair = pygame.image.load("crosshair089.png")
 
 screen.blit(crosshair, middle_of_screen)
 
+gun_sound = pygame.mixer.Sound('gunshot.ogg')
+
 while True:
 
 	pygame.mouse.set_visible(False)
@@ -38,8 +41,11 @@ while True:
 			pygame.quit()
 			sys.exit()
 
+		elif event.type == MOUSEBUTTONDOWN:
+			gun_sound.play()
+
+
 	pygame.display.update()
 
 	clock.tick(FPS)
 
-	
